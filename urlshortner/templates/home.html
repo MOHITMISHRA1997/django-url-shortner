@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+              <li><a href="http://127.0.0.1:8000/admin/" class="nav-link px-2 text-white">Admin</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+              <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+            </ul>
+    
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+              <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <button type="button" class="btn btn-warning">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <h3 class="text-center mt-2">URL shortner</h3>
+
+      <div class="container d-flex justify-content-center mt-4">
+        <form method='POST' style="width: 22rem;">
+            {% csrf_token %}
+          <!-- Name input -->
+          <div class="mb-4">
+            <label for="formName" class="form-label">Name</label>
+            <input type="text" id="youremail" name="orignal_url" class="form-control" placeholder = "Paste your URL..." />
+          </div>
+      
+      
+          <!-- Submit button -->
+          <button type="Submit" class="btn btn-primary btn-block mb-4">Submit</button>
+        </form>
+      </div>
+      <div class="container mt-5">
+        <div class="card text-center">
+            <div class="card-header">
+              New URL
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ yoururl }}</h5>
+              <p class="card-text"><a href="{{ shorturl }}" target="_blank">{{ shorturl }}</a></p>
+
+            </div>
+            <!-- <div class="card-footer text-body-secondary">
+              2 days ago
+            </div> -->
+          </div>
+      </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
