@@ -3,7 +3,7 @@ from .models import URLmodel
 import random
 import string
 
-# Create your views here.
+# Create your views here..
 def home(request):
 
     if request.method == 'POST':
